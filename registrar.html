@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap descarga de código</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-8">
+          <h3 class="bg-primary text-white text-center">
+            Formulario de Registro
+          </h3>
+          <form id="form-registrar">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="apellidoPaterno">Apellido Paterno</label>
+                <input type="text" class="form-control" id="apellidoPaterno" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="apellidoMaterno">Apellido Materno</label>
+                <input type="text" class="form-control" id="apellidoMaterno" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="re-password">Repassword</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="re-password"
+                  onkeyup="validatePassword();"
+                />
+              </div>
+            </div>
+            <div id="div-alert" style="display: none">
+              <div class="alert alert-danger" role="alert">
+                Algunos campos están vacíos.
+              </div>
+            </div>
+            <div id="div-alert-password" style="display: none">
+              <div class="alert alert-warning" role="alert">
+                Las contraseñas no coinciden.
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onclick="validarDatos();"
+              class="btn btn-primary btn-lg btn-block"
+            >
+              Registrar
+            </button>
+            <button
+              type="reset"
+              class="btn-secondary btn-lg btn-block"
+              onclick="limpiarDatosRegistro();"
+            >
+              Restaurar
+            </button>
+          </form>
+        </div>
+
+        <div class="col-4" id="div-formulario" style="display: none">
+          <h3 class="bg-info text-white text-center">Datos del Registro</h3>
+          <form>
+            <div class="form-group row">
+              <label for="name-registrado" class="col-sm-4 col-form-label"
+                >Nombre</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="name-registrado"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="apellido-paterno-registrado"
+                class="col-sm-4 col-form-label"
+                >Apellido Paterno</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="apellido-paterno-registrado"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label
+                for="apellido-materno-registrado"
+                class="col-sm-4 col-form-label"
+                >Apellido Materno</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="apellido-materno-registrado"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email-registrado" class="col-sm-4 col-form-label"
+                >Correo Electrónico</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="email-registrado"
+                  value=""
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="password-registrado" class="col-sm-4 col-form-label"
+                >Contraseña</label
+              >
+              <div class="col-sm-8">
+                <input
+                  type="text"
+                  readonly
+                  class="form-control-plaintext"
+                  id="password-registrado"
+                  value=""
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="./registrar.js"></script>
+  </body>
+</html>
